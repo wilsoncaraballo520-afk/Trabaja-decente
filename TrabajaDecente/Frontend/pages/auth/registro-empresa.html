@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="/assets/css/app.css" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script src="/assets/js/tailwind-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+<title>Registro de empresa · Trabaja Decente</title>
+</head>
+<body data-page="reg-empresa">
+<div class="auth"><aside class="auth-side"><a class="brand" href="/" aria-label="Trabaja Decente"><svg viewBox="0 0 40 40" aria-hidden="true"><rect x="2" y="9" width="36" height="27" rx="7" fill="#fff"/><rect x="2" y="19" width="36" height="4" fill="#FDCB6E"/><rect x="17" y="17" width="6" height="8" rx="2" fill="#584FEA"/></svg><span><span class="brand-name">Trabaja<br>Decente</span><span class="brand-sub">Pascual Bravo</span></span></a>
+<div><h2>Tu próximo trabajo empieza con una buena oportunidad.</h2><p>Ofertas para estudiantes de Pascual Bravo en el Área Metropolitana del Valle de Aburrá.</p></div><span></span></aside>
+<main class="auth-main"><div class="auth-card">
+  <h1>Crear cuenta de empresa</h1><p class="text-secondary">Registra tu empresa en la plataforma. Un administrador la aprobará antes de que puedas publicar.</p>
+  <div class="stepper" id="stepper"><span class="on"><span class="dot">1</span> Información de la empresa</span><span class="bar"></span><span><span class="dot">2</span> Cuenta</span></div>
+  <form id="form" novalidate>
+    <div data-step="1">
+      <div class="mb-3"><label class="form-label" for="nombreEmpresa">Nombre de la empresa</label><input class="form-control" id="nombreEmpresa" name="nombreEmpresa" required maxlength="150" autocomplete="organization"></div>
+      <div class="mb-3"><label class="form-label" for="nit">NIT</label><input class="form-control" id="nit" name="nit" required pattern="[0-9\-\.]{7,20}" maxlength="20" placeholder="900123456-7"></div>
+      <div class="mb-3"><label class="form-label" for="direccion">Dirección</label><input class="form-control" id="direccion" name="direccion" maxlength="200" autocomplete="street-address"></div>
+      <button type="button" class="btn btn-primary w-100" data-next>Siguiente</button>
+    </div>
+    <div data-step="2" hidden>
+      <div class="mb-3"><label class="form-label" for="correoElectronico">Correo electrónico</label><input class="form-control" id="correoElectronico" name="correoElectronico" type="email" required maxlength="254" autocomplete="email"></div>
+      <div class="mb-3"><label class="form-label" for="telefono">Teléfono</label><input class="form-control" id="telefono" name="telefono" type="tel" required pattern="\+?[0-9 ]{7,18}" autocomplete="tel"></div>
+      <div class="mb-3"><label class="form-label" for="pass">Contraseña</label><div class="pw-wrap"><input class="form-control" id="pass" name="contrasena" type="password" required maxlength="72" autocomplete="new-password"><button type="button" data-toggle-pass aria-label="Mostrar contraseña"><i class="bi bi-eye"></i></button></div><div class="hint mt-1">Mínimo 8 caracteres, con mayúscula, minúscula y número.</div></div>
+      <div class="mb-3"><label class="form-label" for="pass2">Confirmar contraseña</label><input class="form-control" id="pass2" type="password" required maxlength="72" autocomplete="new-password"></div>
+      <div class="alert alert-danger py-2" id="err" hidden role="alert"></div>
+      <div class="d-flex gap-2"><button type="button" class="btn btn-soft" data-prev>Atrás</button><button class="btn btn-primary flex-grow-1" id="submit">Registrar empresa</button></div>
+    </div>
+  </form>
+  <p class="mt-3 text-center small text-secondary">¿Ya tienes cuenta? <a href="/pages/auth/login.html">Inicia sesión</a></p>
+</div></main></div>
+<script type="module" src="/assets/js/auth.js"></script>
+</body>
+</html>
